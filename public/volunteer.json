@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "img": "./images/childSupport.png",
+    "name": "Child Support"
+  },
+  {
+    "id": 2,
+    "img": "./images/refuseShelter.png",
+    "name": "Refuge Shelter"
+  },
+  {
+    "id": 3,
+    "img": "./images/foodCharity.png",
+    "name": "Food Charity"
+  },
+  {
+    "id": 4,
+    "img": "./images/goodEducation.png",
+    "name": "Good Education"
+  },
+  {
+    "id": 5,
+    "img": "./images/cleanWater.png",
+    "name": "Clean Water for Children "
+  },
+  {
+    "id": 6,
+    "img": "./images/clothSwap.png",
+    "name": "Host a Clothing Swap"
+  },
+  {
+    "id": 7,
+    "img": "./images/studyGroup.png",
+    "name": "Host a study Group"
+  },
+  {
+    "id": 8,
+    "img": "./images/musicLessons.png",
+    "name": "Give Free Music Lessons"
+  },
+  {
+    "id": 9,
+    "img": "./images/animalShelter.png",
+    "name": "Foster a shelter animal"
+  },
+  {
+    "id": 10,
+    "img": "./images/ITHelp.png",
+    "name": "Give it help to local adults"
+  },
+  {
+    "id": 11,
+    "img": "./images/libraryBooks.png",
+    "name": "Organize Books at the LiBrary"
+  },
+  {
+    "id": 12,
+    "img": "./images/clearnPark.png",
+    "name": "Clean up your local park"
+  }
+]
