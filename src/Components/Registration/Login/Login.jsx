@@ -2,8 +2,7 @@ import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import React, { useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 
-import { Link } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import img from "../../../assets/logos/Group 1329.png";
 import auth, { provider } from "../../../firebase";
 import Header from "../../Header/Header";
@@ -11,7 +10,11 @@ import Header from "../../Header/Header";
 const Login = () => {
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
+  const navigate = useNavigate();
 
+  const location = useLocation();
+  const from = location?.state?.from.pathname;
+  //   console.log(from);
   //   setError("");
   const handleLogin = (event) => {
     event.preventDefault();
@@ -24,6 +27,7 @@ const Login = () => {
         alert("user login successfully");
         setSuccess("User Login Successfully");
         console.log(user);
+        navigate(from, { replace: true });
         event.target.reset();
       })
       .catch((error) => {
@@ -38,6 +42,7 @@ const Login = () => {
         //
         // console.log(result);
         setSuccess("user login successfully");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         setError(error.message);

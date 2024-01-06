@@ -1,6 +1,6 @@
 import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import auth, { provider } from "../../../firebase";
 import img from "../../../assets/logos/Group 1329.png";
 import Header from "../../Header/Header";
@@ -9,6 +9,7 @@ import { FaGoogle } from "react-icons/fa";
 const Register = () => {
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
+  const navigate = useNavigate();
   const handleRegister = (event) => {
     event.preventDefault();
     const email = event.target.email.value;
@@ -18,6 +19,7 @@ const Register = () => {
         event.target.reset();
         setError("");
         setSuccess("User created successfully");
+        navigate("/");
         console.log(user);
       })
       .catch((error) => {
@@ -32,6 +34,7 @@ const Register = () => {
         //
         // console.log(result);
         setSuccess("user login successfully");
+        navigate("/");
       })
       .catch((error) => {
         setError(error.message);
