@@ -7,7 +7,7 @@ import CharityDetails from "./CharityDetails/CharityDetails";
 const Home = () => {
   const [information, setInformation] = useState([]);
   useEffect(() => {
-    fetch("volunteer.json")
+    fetch("http://localhost:5000/data")
       .then((res) => res.json())
       .then((data) => setInformation(data));
   }, []);
@@ -29,7 +29,7 @@ const Home = () => {
       </div>
       <div className="charity">
         {information.map((data) => (
-          <CharityDetails key={data.id} data={data}></CharityDetails>
+          <CharityDetails key={data._id} data={data}></CharityDetails>
         ))}
       </div>
       <Footer></Footer>

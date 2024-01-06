@@ -4,7 +4,7 @@
 .header {
   display: flex;
   justify-content: space-between;
-  margin: 80px;
+  margin: 80px 40px 80px 80px;
   margin-top: 30px;
   align-items: center;
 }
@@ -27,7 +27,7 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   margin-top: 50px;
-  margin-left: 80px;
+  margin-left: 40px;
   /* margin: 10px; */
 }
 .details p {
@@ -35,4 +35,11 @@
 }
 .details img {
   width: 270px;
+}
+.register {
+  align-items: center;
+  justify-content: center;
+}
+.register img {
+  width: 30%;
 }

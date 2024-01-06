@@ -7,16 +7,20 @@ import "./Header.css";
 const Header = () => {
   return (
     <div className="header">
-      <img src={img} alt="" />
+      <Link to="/">
+        <img src={img} alt="" />
+      </Link>
       <div>
-        <Link>Home</Link>
+        <Link to="/">Home</Link>
         <Link>Donation</Link>
         <Link>Events</Link>
         <Link>Blog</Link>
-        <Link>
+        <Link to="/register">
           <Button>Register</Button>
         </Link>
-        <Button variant="secondary">Admin</Button>
+        <Link>
+          <Button variant="secondary">Admin</Button>
+        </Link>
       </div>
     </div>
   );

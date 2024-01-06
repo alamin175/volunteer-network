@@ -1,7 +1,7 @@
 import React from "react";
 
 const CharityDetails = ({ data }) => {
-  const { id, name, img } = data;
+  const { _id, name, img } = data;
   return (
     <div className="details">
       <img className=" rounded-0" src={img} alt="" />
