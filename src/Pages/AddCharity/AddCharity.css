@@ -1,0 +1,46 @@
+.charity-container {
+  background-color: #f4f7fc;
+  width: 100vw;
+}
+.sidebar {
+  width: 307px;
+  height: 100vh;
+  background-color: white;
+}
+.sidebar img {
+  width: 90%;
+  margin: 7px;
+}
+.sidebar span {
+  font-size: 20px;
+  margin-top: 47px;
+}
+.sidebar span h5 {
+  font-size: 16px;
+}
+.add-container {
+  background-color: white;
+  width: 900px;
+  height: 305px;
+  border-radius: 20px;
+  margin: 40px;
+  padding: 0px 15px 5px 15px;
+  box-shadow: 0px 10px 30px 10px rgba(0, 0, 0, 0.1);
+}
+.add-container input {
+  width: 420px;
+  height: 40px;
+  border-radius: 3.3px;
+  border: 0.667px solid #c9c9c9;
+  margin-left: 10px;
+}
+.add-container p {
+  margin-bottom: 2px;
+  margin-top: 30px;
+  margin-left: 15px;
+}
+.add {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 50px;
+}

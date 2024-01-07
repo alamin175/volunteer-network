@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Header from "../../Components/Header/Header";
 import img from "../../assets/logos/Group 1329.png";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import useVolunteerDetails from "../../Components/hooks/useVolunteerDetails";
 import { UserContext } from "../../Components/AuthContext/AuthContext";
 
@@ -9,7 +9,8 @@ const VolunteerRegister = () => {
   const { id } = useParams();
   const { user } = useContext(UserContext);
   const [volunteer] = useVolunteerDetails(id);
-  console.log(volunteer);
+  const navigate = useNavigate();
+  // console.log(volunteer);
   //   console.log(id);
   const url = ` http://localhost:5000/volunteer/${id}`;
   const handleRegister = (event) => {
@@ -29,7 +30,7 @@ const VolunteerRegister = () => {
       description: description,
       image: img,
     };
-    console.log(totalData);
+    // console.log(totalData);
     fetch(url, {
       method: "POST",
       headers: {
@@ -39,10 +40,11 @@ const VolunteerRegister = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data?.insertedId) {
           alert("your registration for volunteer successfully");
           form.reset();
+          navigate("/events");
         }
       });
   };
@@ -54,6 +56,7 @@ const VolunteerRegister = () => {
         <div className=" m-4 p-4 w-50 text-center  border border-black">
           {/* <img src={img} alt="" /> */}
           <h1>Please Register as a Volunteer</h1>
+
           <form onSubmit={handleRegister}>
             <input
               required
@@ -85,6 +88,7 @@ const VolunteerRegister = () => {
               type="text"
               name="date"
               placeholder="Date"
+              required
             />
             <input
               className="mx-auto d-block m-4 "
@@ -100,6 +104,7 @@ const VolunteerRegister = () => {
               type="text"
               name="description"
               placeholder="Description"
+              required
             />
             <input
               className="btn btn-primary w-25"

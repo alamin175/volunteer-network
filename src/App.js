@@ -5,6 +5,7 @@ import Donation from "./Components/Donation/Donation";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import Login from "./Components/Registration/Login/Login";
 import Register from "./Components/Registration/Register/Register";
+import AddCharity from "./Pages/AddCharity/AddCharity";
 import Events from "./Pages/Events/Events";
 import Home from "./Pages/Home/Home";
 import VolunteerRegister from "./Pages/VolunteerRegister/VolunteerRegister";
@@ -16,6 +17,14 @@ function App() {
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
+        <Route
+          path="/addCharity"
+          element={
+            <PrivateRoute>
+              <AddCharity></AddCharity>
+            </PrivateRoute>
+          }
+        ></Route>
         <Route
           path="/events"
           element={

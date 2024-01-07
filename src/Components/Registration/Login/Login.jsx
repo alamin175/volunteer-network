@@ -27,7 +27,7 @@ const Login = () => {
         alert("user login successfully");
         setSuccess("User Login Successfully");
         console.log(user);
-        navigate(from, { replace: true });
+        navigate(from ? from : "/", { replace: true });
         event.target.reset();
       })
       .catch((error) => {
@@ -42,7 +42,7 @@ const Login = () => {
         //
         // console.log(result);
         setSuccess("user login successfully");
-        navigate(from, { replace: true });
+        navigate(from ? from : "/", { replace: true });
       })
       .catch((error) => {
         setError(error.message);

@@ -1,7 +1,10 @@
 import React from "react";
 
-const EventsDetails = ({ event }) => {
+const EventsDetails = ({ event, setevent }) => {
   const { _id, image, name, title, date } = event;
+  const [events, setEvents] = setevent;
+  // console.log(events);
+
   const handleDelete = (id) => {
     const proceed = window.confirm(" Are You sure you want to delete this?");
     if (proceed) {
@@ -10,7 +13,8 @@ const EventsDetails = ({ event }) => {
       })
         .then((res) => res.json())
         .then((data) => {
-          //   const remainig = event.filter((data) => data._id !== id);
+          const remainig = events.filter((data) => data._id !== id);
+          setEvents(remainig);
         });
     }
   };
