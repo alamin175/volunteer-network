@@ -3,9 +3,18 @@ import "./AddCharity.css";
 import img from "../../assets/logos/Group 1329.png";
 import { FaUserCheck } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
+import useTitle from "../../Components/hooks/useTitle";
+import { getAuth } from "firebase/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase";
 
 const AddCharity = () => {
   const navigate = useNavigate();
+  useTitle("AddCharity");
+  const [user] = useAuthState(auth);
+  const uid = user.uid;
+  console.log(user);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -44,9 +53,14 @@ const AddCharity = () => {
         </span>
       </div>
       <form onSubmit={handleSubmit}>
-        <div className="add">
+        <div className="add d-flex align-items-center">
           <h1>Add Charity Event</h1>
+
+          <Link to="/" className="ms-5  fs-4 fw-bold text-black">
+            <button className="btn btn-outline-primary">Home</button>
+          </Link>
         </div>
+
         <div className="add-container d-flex">
           <div>
             <p>Event Title</p>

@@ -6,11 +6,13 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import img from "../../../assets/logos/Group 1329.png";
 import auth, { provider } from "../../../firebase";
 import Header from "../../Header/Header";
+import useTitle from "../../hooks/useTitle";
 
 const Login = () => {
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
   const navigate = useNavigate();
+  useTitle("Login");
 
   const location = useLocation();
   const from = location?.state?.from.pathname;

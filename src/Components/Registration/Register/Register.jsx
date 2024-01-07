@@ -5,11 +5,13 @@ import auth, { provider } from "../../../firebase";
 import img from "../../../assets/logos/Group 1329.png";
 import Header from "../../Header/Header";
 import { FaGoogle } from "react-icons/fa";
+import useTitle from "../../hooks/useTitle";
 
 const Register = () => {
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
   const navigate = useNavigate();
+  useTitle("Register");
 
   const handleRegister = (event) => {
     event.preventDefault();

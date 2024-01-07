@@ -1,9 +1,11 @@
 import React from "react";
+import useTitle from "../../Components/hooks/useTitle";
 
 const EventsDetails = ({ event, setevent }) => {
   const { _id, image, name, title, date } = event;
   const [events, setEvents] = setevent;
   // console.log(events);
+  useTitle("Events");
 
   const handleDelete = (id) => {
     const proceed = window.confirm(" Are You sure you want to delete this?");

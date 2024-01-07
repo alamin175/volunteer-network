@@ -1,15 +1,16 @@
 import React, { useContext } from "react";
 import Header from "../../Components/Header/Header";
-import img from "../../assets/logos/Group 1329.png";
 import { useNavigate, useParams } from "react-router-dom";
 import useVolunteerDetails from "../../Components/hooks/useVolunteerDetails";
 import { UserContext } from "../../Components/AuthContext/AuthContext";
+import useTitle from "../../Components/hooks/useTitle";
 
 const VolunteerRegister = () => {
   const { id } = useParams();
   const { user } = useContext(UserContext);
   const [volunteer] = useVolunteerDetails(id);
   const navigate = useNavigate();
+  useTitle("Volunteer");
   // console.log(volunteer);
   //   console.log(id);
   const url = ` http://localhost:5000/volunteer/${id}`;

@@ -5,11 +5,13 @@ import AuthContext, {
 } from "../../Components/AuthContext/AuthContext";
 import Header from "../../Components/Header/Header";
 import useInformation from "../../Components/hooks/useInformation";
+import useTitle from "../../Components/hooks/useTitle";
 import Footer from "../../SharedPages/Footer/Footer";
 import CharityDetails from "./CharityDetails/CharityDetails";
 
 const Home = () => {
   const [information] = useInformation();
+  useTitle("Home");
 
   return (
     <div className="home-conatainer">

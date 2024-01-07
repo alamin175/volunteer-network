@@ -7,13 +7,14 @@ import { getAuth, GoogleAuthProvider } from "firebase/auth";
 export const provider = new GoogleAuthProvider();
 
 // Your web app's Firebase configuration
+
 const firebaseConfig = {
-  apiKey: "AIzaSyBP5yNlyXyt0l38y0JmRZSGEKLkKWMImA0",
-  authDomain: "volunteer-network-ead80.firebaseapp.com",
-  projectId: "volunteer-network-ead80",
-  storageBucket: "volunteer-network-ead80.appspot.com",
-  messagingSenderId: "754284297637",
-  appId: "1:754284297637:web:f9ba485922be6f00c8bc4c",
+  apiKey: process.env.REACT_APP_APIKEY,
+  authDomain: process.env.REACT_APP_AUTHDOMAIN,
+  projectId: process.env.REACT_APP_PROJECTID,
+  storageBucket: process.env.REACT_APP_STORAGEBUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID,
+  appId: process.env.REACT_APP_APPID,
 };
 
 // Initialize Firebase

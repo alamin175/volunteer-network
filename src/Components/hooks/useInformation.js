@@ -7,7 +7,7 @@ const useInformation = () => {
   const [information, setInformation] = useState([]);
 
   const email = user?.email;
-  console.log(email);
+  // console.log(email);
   useEffect(() => {
     fetch(`http://localhost:5000/data`)
       .then((res) => res.json())
