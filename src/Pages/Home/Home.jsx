@@ -4,18 +4,13 @@ import AuthContext, {
   UserContext,
 } from "../../Components/AuthContext/AuthContext";
 import Header from "../../Components/Header/Header";
+import useInformation from "../../Components/hooks/useInformation";
 import Footer from "../../SharedPages/Footer/Footer";
 import CharityDetails from "./CharityDetails/CharityDetails";
 
 const Home = () => {
-  const [information, setInformation] = useState([]);
-  const { user } = useContext(UserContext);
+  const [information] = useInformation();
 
-  useEffect(() => {
-    fetch("http://localhost:5000/data")
-      .then((res) => res.json())
-      .then((data) => setInformation(data));
-  }, []);
   return (
     <div className="home-conatainer">
       <Header></Header>

@@ -5,6 +5,7 @@ import auth from "../../firebase";
 export const UserContext = createContext();
 const AuthContext = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const logout = () => {
     return signOut(auth)
@@ -16,6 +17,7 @@ const AuthContext = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       //   console.log(currentUser);
       setUser(currentUser);
+      setLoading(false);
     });
     return unsubscribe;
   }, []);
@@ -23,6 +25,7 @@ const AuthContext = ({ children }) => {
   const authInfo = {
     user,
     logout,
+    loading,
   };
 
   return (

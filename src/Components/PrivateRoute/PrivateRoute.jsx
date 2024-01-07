@@ -1,11 +1,17 @@
 import React, { useContext } from "react";
+import { ProgressBar } from "react-bootstrap";
 import { Navigate, useLocation } from "react-router-dom";
 import { UserContext } from "../AuthContext/AuthContext";
 
 const PrivateRoute = ({ children }) => {
   const location = useLocation();
   //   console.log(location);
-  const { user } = useContext(UserContext);
+  const { user, loading } = useContext(UserContext);
+  if (loading) {
+    const now = 60;
+
+    return <ProgressBar animated now={now} label="loading" />;
+  }
   if (user) {
     return children;
   }

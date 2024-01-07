@@ -18,8 +18,8 @@ const Header = () => {
       <div>
         <Link to="/">Home</Link>
         <Link to="/donation">Donation</Link>
-        <Link>Events</Link>
-        <Link>Blog</Link>
+        <Link to="/events">Events</Link>
+        <Link to="/blog">Blog</Link>
         <span className={user ? " border border-danger p-1 rounded" : ""}>
           <small>{user ? user.email : ""} </small>
         </span>

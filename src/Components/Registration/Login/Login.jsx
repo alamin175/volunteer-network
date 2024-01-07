@@ -55,7 +55,7 @@ const Login = () => {
       <div className="d-flex register align-items-center justify-content-center mx-auto ">
         <div className=" m-4 p-4 w-50 text-center  border border-black">
           <img src={img} alt="" />
-          <h1>Please Register as a Volunteer</h1>
+          <h1>Please Login </h1>
           <form onSubmit={handleLogin}>
             <input
               className="mx-auto d-block m-4 "

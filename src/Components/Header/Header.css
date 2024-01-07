@@ -30,6 +30,9 @@
   margin-left: 40px;
   /* margin: 10px; */
 }
+.charity a {
+  text-decoration: none;
+}
 .details p {
   width: 270px;
 }
@@ -42,4 +45,28 @@
 }
 .register img {
   width: 30%;
+}
+.progress {
+  transition: width 0.5s ease-in-out;
+  background-color: red;
+}
+.events-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-left: 40px;
+  margin-top: 20px;
+  row-gap: 20px;
+}
+.events {
+  display: flex;
+  width: 575px;
+  height: 219px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
+}
+.events img {
+  width: 195px;
+  height: 175px;
+  margin: 23px;
 }
